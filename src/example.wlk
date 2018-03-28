@@ -1,9 +1,8 @@
-/** First Wollok example */
 object pepe 
 {
-	var categoria = gerente
-	var diasAusen = 0
-	var bonoResul = 0
+	var categoria 
+	var diasAusen 
+	var bonoResul 
 	
 	method cambiaCat(nuevaCat)
 	{

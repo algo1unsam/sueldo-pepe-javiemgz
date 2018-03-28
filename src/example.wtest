@@ -1,0 +1,139 @@
+import example.*
+/*----------------------------------GERENTE---------------------------------- */
+test "inicializacion de pepe como gerente sin ningun bono" {	
+	pepe.cambiaCat(gerente)
+	pepe.faltas(3)
+	pepe.CambioBR(sinBono)
+	assert.equals (1000,pepe.sueldo())
+}
+
+test "sueldo de pepe como gerente con bono de una falta" {
+	pepe.cambiaCat(gerente)
+	pepe.faltas(1)
+	pepe.CambioBR(sinBono)
+	assert.equals (1050,pepe.sueldo())
+}
+test "sueldo de pepe como gerente con bono sin faltas" {	
+	pepe.cambiaCat(gerente)
+	pepe.faltas(0)
+	pepe.CambioBR(sinBono)
+	assert.equals (1100,pepe.sueldo())
+	}
+
+test "sueldo de pepe gerente con bono fijo" {	
+	
+	pepe.cambiaCat(gerente)
+	pepe.faltas(3)
+	pepe.CambioBR(fijo)
+	assert.equals (1080,pepe.sueldo())
+	
+	}
+test "sueldo de pepe gerente con bono por porcentaje" {	
+	pepe.cambiaCat(gerente)
+	pepe.faltas(3)
+	pepe.CambioBR(xPorc)
+	assert.equals (1100,pepe.sueldo())
+}
+
+test "sueldo de pepe gerente con bono fijo y sin faltas " {	
+	
+	pepe.cambiaCat(gerente)
+	pepe.faltas(0)
+	pepe.CambioBR(fijo)
+	assert.equals (1180,pepe.sueldo())
+	
+	}
+
+test "sueldo de pepe gerente con bono fijo y una falta " {	
+	
+	pepe.cambiaCat(gerente)
+	pepe.faltas(1)
+	pepe.CambioBR(fijo)
+	assert.equals (1130,pepe.sueldo())
+	
+	}
+	
+test "sueldo de pepe gerente con bono por porcentaje con una falta" {	
+	pepe.cambiaCat(gerente)
+	pepe.faltas(1)
+	pepe.CambioBR(xPorc)
+	assert.equals (1150,pepe.sueldo())
+}
+	
+test "sueldo de pepe gerente con bono por porcentaje sin faltas" {	
+	pepe.cambiaCat(gerente)
+	pepe.faltas(0)
+	pepe.CambioBR(xPorc)
+	assert.equals (1200,pepe.sueldo())
+}
+
+/*----------------------------------CADETE---------------------------------- */
+
+test "inicializacion de pepe como cadete sin ningun bono" {	
+	pepe.cambiaCat(cadete)
+	pepe.faltas(3)
+	pepe.CambioBR(sinBono)
+	assert.equals (1500,pepe.sueldo())
+}
+
+test "sueldo de pepe como cadete con bono de una falta" {
+	pepe.cambiaCat(cadete)
+	pepe.faltas(1)
+	pepe.CambioBR(sinBono)
+	assert.equals (1550,pepe.sueldo())
+}
+test "sueldo de pepe como cadete con bono sin faltas" {	
+	pepe.cambiaCat(cadete)
+	pepe.faltas(0)
+	pepe.CambioBR(sinBono)
+	assert.equals (1600,pepe.sueldo())
+	}
+
+test "sueldo de pepe cadete con bono fijo" {	
+	
+	pepe.cambiaCat(cadete)
+	pepe.faltas(3)
+	pepe.CambioBR(fijo)
+	assert.equals (1580,pepe.sueldo())
+	
+	}
+test "sueldo de pepe cadete con bono por porcentaje" {	
+	pepe.cambiaCat(cadete)
+	pepe.faltas(3)
+	pepe.CambioBR(xPorc)
+	assert.equals (1650,pepe.sueldo())
+}
+
+test "sueldo de pepe cadete con bono fijo y una falta " {	
+	
+	pepe.cambiaCat(cadete)
+	pepe.faltas(1)
+	pepe.CambioBR(fijo)
+	assert.equals (1630,pepe.sueldo())
+	
+	}
+	test "sueldo de pepe cadete con bono fijo sin faltas " {	
+	
+	pepe.cambiaCat(cadete)
+	pepe.faltas(0)
+	pepe.CambioBR(fijo)
+	assert.equals (1680,pepe.sueldo())
+	
+	}
+
+test "sueldo de pepe cadete con bono por porcentaje con una falta" {	
+	pepe.cambiaCat(cadete)
+	pepe.faltas(1)
+	pepe.CambioBR(xPorc)
+	assert.equals (1700,pepe.sueldo())
+}
+
+test "sueldo de pepe cadete con bono por porcentaje sin faltas" {	
+	pepe.cambiaCat(cadete)
+	pepe.faltas(0)
+	pepe.CambioBR(xPorc)
+	assert.equals (1750,pepe.sueldo())
+}
+
+
+

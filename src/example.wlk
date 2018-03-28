@@ -1,7 +1,7 @@
 object pepe 
 {
 	var categoria 
-	var diasAusen 
+	var bonoPresen 
 	var bonoResul 
 	
 	method cambiaCat(nuevaCat)
@@ -9,25 +9,24 @@ object pepe
 		categoria=nuevaCat
 	}
 	
-	method getNetoPepe()
-	{
-		return categoria.neto();
-	}
-	
 	method faltas(faltas)
 	{
-		diasAusen=faltas
+		var diasAusen = faltas
+		if (diasAusen > 1)
+			bonoPresen = sinPresentismo.valor()
+		else
+			bonoPresen = bonoXPresentismo.valor(diasAusen)	
 	}
 	
 	method CambioBR(tipo)
 	{
-		bonoResul=tipo.valor()
+		bonoResul=tipo.valor(categoria)
 	}
 	
 	method sueldo()
 	{
 		var sue
-		sue = categoria.neto() + bonoXPresentismo.valor(diasAusen)+ bonoResul
+		sue = categoria.neto() + bonoPresen + bonoResul
 		return sue
 	}
 	
@@ -47,8 +46,6 @@ object bonoXPresentismo
 {
 	method valor (faltas)
 	{
-		if (faltas>1)
-			return 0
 			
 		if (faltas==1)
 			return 50
@@ -59,24 +56,29 @@ object bonoXPresentismo
 	}
 }
 
+object sinPresentismo
+{
+	method valor() =0
+}
+
 object xPorc
 {
-	method valor()
+	method valor(categoria)
 	{
-		return pepe.getNetoPepe()*0.1
+		return categoria.neto()*0.1
 	}
 }
 
 object fijo
 {
 	
-	method valor()=80
+	method valor(categoria)=80
 	
 }
 
 object sinBono
 {
 	
-	method valor()=0
+	method valor(categoria)=0
 	
 }
